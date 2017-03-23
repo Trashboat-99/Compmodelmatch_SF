@@ -1,0 +1,182 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" controller="theController" >
+<html>
+<head>
+	<meta charset="utf-8" />
+      <title>CompModelMatch</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<!--regular stylesheet-->
+
+			<link href="{!URLFOR($Resource.style2, 'css/style.css')}" rel="stylesheet" />
+      <!-- Bootstrap -->
+      <link href="{!URLFOR($Resource.bootstrap, 'dist/css/bootstrap.min.css')}" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar" style="background-color:#262626">
+        <ul class="nav navbar-nav navbar-left">
+          <a id="site-title" class="navbar-brand" href="index.html">CompModelMatch</a>
+          <!--<img id="nav-logo" src="assets/logo.png" alt="nav-logo" class="img-rounded"></img></a>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+          <li><a id="home-btn" href="#home">Home</a></li>
+          <li ><a id="about-btn" href="#about">About</a></li>
+          <li ><a id="search-btn" href="#search">Members</a></li>
+					<li><apex:form><button type="button" id="signup-btn" class="btn btn-info" style="{text-decoration:none; margin-top:15px;}"><apex:commandLink value="Sign Up" action="{!redirect}"></apex:commandLink></button></apex:form></li>
+					<li><a href="Registration.page" onclick="generatedJs()">
+						<button type="button" id="login-btn" class="btn btn-info">Login</button>
+					</a></li>
+				</ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<section id="home">
+<div id="slogan" class="container" style="position:relative; top:50px;">
+  <div class="jumbotron">
+    <h2>Connecting Researchers To Accomplish Great Things</h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+      <button id="start-btn" class="btn" style="position:relative; top:50px;">
+				<a href="#search">Get Started</a>
+			</button>
+    </div>
+  </div>
+</div>
+</section>
+<section id="about">
+    <div class="row">
+      <div id="about-heading" class="col-lg-12">
+				<center>
+				<h1>How Does It Work?</h1>
+			</center>
+			</div>
+  </div>
+  <div class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <p class="lead">1. Select what kind of researcher you are.</p>
+				</hr>
+        </div>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <!--<img id="img1" class="img-responsive" src="assets/science-icon.png" alt="image 1" width="100px">-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-section-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <p class="lead">2. Enter a keyword or phrase in the search box.</p>
+				</hr>
+        </div>
+        <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+          <!--<img id="img2" class="img-responsive" src="assets/keyboard-icon.png" alt="image 2"width="200px">-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <p class="lead">3. Find published research of interest. </p>
+				</hr>
+        </div>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <!--<img id="img3" class="img-responsive" src="assets/search-icon.png" alt="image 3"width="100px">-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-section-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <p class="lead">4.Conntect</p>
+				</hr>
+        </div>
+        <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+          <!--<img id="img4" class="img-responsive" src="assets/connect-icon.png" alt="image 4"width="100px">-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--<section id="search">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+      <img id="search-logo"src="assets/img1.png" alt="logo" width="250px">
+    </div>
+  <div class="col-md-4"></div>
+</div>
+</div>
+    <div id="rg" class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+      <input id="comp"type="radio" name="sitesearch" value=" "> Computational
+      <input id="exper"type="radio" name="sitesearch" value=" " checked/> Experimental
+      <input id="other"type="radio" name="sitesearch" value=" "> Other
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+<div id="search-box"class="container">
+  <div class="row">
+    <div class="col-md-12 center block">
+    <form method="get" action="https://scholar.google.com/scholar">
+      <input type="search" id="searchBar" placeholder="Enter keyword or phrase" value="" maxlength="255" autocomplete="off"/><button type="submit" class="btn btn-success" id="searchBtn" value="Search">Search <span class="glyphicon glyphicon-search"></span></button>
+    </div>
+  </div>
+</div>
+</form>
+
+</section>-->
+<section id="search">
+  <div class="row">
+    <div id="construction-heading" class="col-lg-12">
+			<h1>Website Under Construction</h1></div>
+</div>
+</section>
+<div id="footer" class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    <div class="row">
+			<div class="col-md-12" style="color:#FFFFFF; padding:10px;">
+				<center>
+    			<p>Funded by the National Science Foundation</p>
+					<p>Powered by Salesforce</p>
+    			<p>Copyright© 2017</p>
+				</center>
+			</div>
+    </div>
+  </div>
+</div>
+</body>
+  </html>
+</apex:page>
