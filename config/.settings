@@ -1,0 +1,17 @@
+{
+    "projectName": "CompModelMatch",
+    "username": "stephanie@provality.com",
+    "id": "3bc7f9c0-0eaa-11e7-b2c9-8912734c1eb2",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://na40.salesforce.com",
+    "workspace": "/Users/Stephanie/Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
